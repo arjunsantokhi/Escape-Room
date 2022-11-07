@@ -1,3 +1,5 @@
+console.log('Main loaded');
+
 let done = false;
 
 function scrollingText(className, message, speed){
@@ -24,5 +26,4 @@ scrollingText(".text", `Hello, you might not know who you are.`, 75 );
  setTimeout(() => {
      scrollingText(".text", "hahaha", 75 );
  }, 75*38);
-
 
