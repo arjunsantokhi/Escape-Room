@@ -21,7 +21,9 @@ function scrollingText(className, message, speed){
 
 scrollingText(".text", "Hello, you might not know who you are. But all you need to know is that you need to get out. There should be a key somewhere in this empty room. ", 75 );
 
-
+setTimeout(() => {
+    scrollingText(".text", "hahaha", 75 );
+}, 75*38);
 
 
 
