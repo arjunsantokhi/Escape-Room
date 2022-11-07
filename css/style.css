@@ -7,10 +7,10 @@ body{
     background-color: black;
     color: white;
     font-family: 'VT323';
-    font-size: 20px;
+    font-size: 10px;
 }
 
-#console {
+.CPU-dialogue {
     margin: auto;
     padding: 5px;
     margin-top: 50px;

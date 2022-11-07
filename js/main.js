@@ -9,4 +9,4 @@ function scrollingText(className, message, speed){
     }, speed);
 }
 
-scrollingText(".msg", "HALLO DIT IS EEN TEXT JAJAJAJAJAJAJAAJAJAJAJAJAJAJAJAJAJAAJAJAJAJAJAJAJAJAJAJAJA", 100);
+scrollingText(".text", "Hello, you might not know who you are. But all you need to know is that you need to get out. ", 100);
