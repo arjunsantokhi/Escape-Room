@@ -7,6 +7,7 @@ function scrollingText(className, message, speed){
             clearInterval(interval);
         }
     }, speed);
+    //hoe lager het getal naast scrollingText, hoe sneller//
 }
 
-scrollingText(".text", "Hello, you might not know who you are. But all you need to know is that you need to get out. ", 100);
+scrollingText(".text", "Hello, you might not know who you are. But all you need to know is that you need to get out. ", 75 );
