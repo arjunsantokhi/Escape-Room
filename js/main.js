@@ -1,3 +1,5 @@
+console.log('Main loaded');
+
 function scrollingText(className, message, speed){
     let i = 0;
     let interval = setInterval(function(){
