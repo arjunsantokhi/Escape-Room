@@ -20,3 +20,16 @@ body{
     height: 80vh;
     border: 2px solid white;
 }
+
+.summaryText {
+    color: white;
+}
+
+.choice {
+    color: dodgerblue;
+}
+
+.choice:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
