@@ -30,12 +30,11 @@ setTimeout(() => {
     scrollingText(".text", "There should be a key somewhere in this empty room.", 75 );
 }, 75*110);
 
+
 setTimeout(() => {
-    scrollingText(".text", "There should be a key somewhere in this empty room.", 75 );
+    scrollingText(".text", "There is a door in front of you, get out", 75 );
 }, 75*170);
-
-
-
+ 
 
 
 
