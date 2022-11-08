@@ -33,9 +33,10 @@ setTimeout(function(){
     document.querySelector('.text').innerHTML = "";
 }, 75*175);
 
-
-
-
+setTimeout(() => {
+    scrollingText(".text", "There is a door in front of you, get out", 75 );
+}, 75*170);
+ 
 
 
 
