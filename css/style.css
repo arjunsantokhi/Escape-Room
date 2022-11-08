@@ -37,3 +37,26 @@ body{
 .choice:hover::before{
     content: "> "
 }
+
+.input{
+    background-color: #171717;
+    color: white;
+    font-family: 'VT323';
+    font-size: 15px;
+    border: 0;
+    outline: 0;
+    font-weight: bold;
+    width: 80vw;
+    display: block;
+}
+
+.bad-ending {
+    font-size: 100px;
+    color: red;
+    text-align: center;
+    display: none;
+}
+
+.back{
+    color: orange;
+}
