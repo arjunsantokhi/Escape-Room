@@ -81,7 +81,9 @@ function choiceOneClick()
         input.style.display = "block"; 
         scrollingText(".back", "Back.", speed );
     }, speed*65); 
+    back.style.display = "block";
 }
+
 function backClick() {
     document.querySelector('.text').innerHTML = "";
     back.style.display = "none";
@@ -96,19 +98,19 @@ function backClick() {
 
     setTimeout(() => {
         scrollingText(".summaryText", "you can see a key lying on the floor", speed );
-    }, speed*120);
+    }, speed*130);
     
     setTimeout(() => {
         scrollingText(".choice-1-1", " Walk to the door", speed );
-    }, speed*160);
+    }, speed*170);
     
     setTimeout(() => {
         scrollingText(".choice-2-1", " Grab the key", speed );
-    }, speed*180);
+    }, speed*190);
     
     setTimeout(() => {
         scrollingText(".choice-3-1", ' "What?" ', speed );
-    }, speed*200);
+    }, speed*210);
 
 }
 
@@ -143,7 +145,9 @@ function choiceTwoClick()
     
     setTimeout(() => {
         scrollingText(".choice-2B-1", " break the key", speed );
+        back.style.display = "block";
     }, speed*280); 
+
 }
 
 function choiceBClick() {
@@ -156,7 +160,7 @@ function choiceBClick() {
 
     scrollingText(".text", "You break the key, its brittle, dust particles fly through the room. You find that glowing text appears spelling: “3 9 5 is the key”. The floor, walls and ceiling are covered with the same sentence: “3 9 5 is the key “. You walk back to the computer. ", speed );
     
-
+    back.style.display = "block";
     
 
 }
@@ -233,6 +237,7 @@ function testInput(event){
         {
             if(input.value == "395") {
                 document.querySelector('.text').innerHTML = "";
+                document.querySelector('.back').innerHTML = "";
                 input.style.display = "none";
                 scrollingText(".text", "correct, you opened the door and walk out of it", speed );
             }
