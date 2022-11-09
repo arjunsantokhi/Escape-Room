@@ -214,7 +214,7 @@ function choiceBClick() {
         scrollingText(".back", "Back.", speed );
     }, speed*110);
 
-   
+   //speed
     
 
 }
