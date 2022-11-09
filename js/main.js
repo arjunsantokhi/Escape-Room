@@ -10,6 +10,8 @@ let done = false;
 input.style.display = "none"
 let tries = 2;//formula: tries + 1  dit zijn 3 tries
 let speed = 40;
+let ownKey = false;
+let understood = false;
 
 function scrollingText(className, message, speed){
     let i = 0;
@@ -82,6 +84,8 @@ function choiceOneClick()
         scrollingText(".back", "Back.", speed );
     }, speed*65); 
     back.style.display = "block";
+
+    
 }
 
 function backClick() {
@@ -96,21 +100,43 @@ function backClick() {
     }, speed*40);
     
 
-    setTimeout(() => {
-        scrollingText(".summaryText", "you can see a key lying on the floor", speed );
-    }, speed*130);
+    if(ownKey == true) {
+
+        setTimeout(() => {
+            scrollingText(".summaryText", "you have a key in your hand", speed );
+        }, speed*140);
+        
+    }
+    else {
+        setTimeout(() => {
+            scrollingText(".summaryText", "you can see a key lying on the floor", speed );
+        }, speed*140);
+    }
     
     setTimeout(() => {
         scrollingText(".choice-1-1", " Walk to the door", speed );
     }, speed*170);
     
-    setTimeout(() => {
-        scrollingText(".choice-2-1", " Grab the key", speed );
-    }, speed*190);
-    
-    setTimeout(() => {
-        scrollingText(".choice-3-1", ' "What?" ', speed );
-    }, speed*210);
+    if(ownKey == true ) {
+        setTimeout(() => {
+            scrollingText(".choice-2B-1", " break the key", speed );
+            back.style.display = "block";
+        }, speed*200); 
+    }
+    else {
+        setTimeout(() => {
+            scrollingText(".choice-2-1", " Grab the key", speed );
+        }, speed*200);
+    }
+    if (understood == true ) {
+        document.querySelector('.choice-3-1').innerHTML = "";
+    }
+    else { 
+        setTimeout(() => {
+            scrollingText(".choice-3-1", ' "What?" ', speed );
+        }, speed*230);
+    }
+    document.querySelector('.back').innerHTML = "";
 
 }
 
@@ -148,6 +174,19 @@ function choiceTwoClick()
         back.style.display = "block";
     }, speed*280); 
 
+    if (understood == true ) {
+        document.querySelector('.choice-3-1').innerHTML = "";
+    }
+    else { 
+        setTimeout(() => {
+            scrollingText(".choice-3-1", ' "What?" ', speed );
+        }, speed*530);
+    }
+
+    
+
+
+    ownKey = true;
 }
 
 function choiceBClick() {
@@ -193,18 +232,37 @@ setTimeout(() => {
     scrollingText(".summaryText", "all alone. The only thing in front of you is a computer with a single application", speed );
 }, speed*240);
 
-setTimeout(() => {
-    scrollingText(".summaryText", "you can see a key lying on the floor", speed );
-}, speed*330);
+if(ownKey == true) {
+
+    setTimeout(() => {
+        scrollingText(".summaryText", "you have a key in your hand", speed );
+    }, speed*330);
+    
+}
+else {
+    setTimeout(() => {
+        scrollingText(".summaryText", "you can see a key lying on the floor", speed );
+    }, speed*330);
+}
+
 
 setTimeout(() => {
     scrollingText(".choice-1-1", " Walk to the door", speed );
 }, speed*370);
 
-setTimeout(() => {
-    scrollingText(".choice-2-1", " Grab the key", speed );
-}, speed*400);
+if(ownKey == true ) {
+    setTimeout(() => {
+        scrollingText(".choice-2B-1", " break the key", speed );
+        back.style.display = "block";
+    }, speed*280); 
+}
+else {
+    setTimeout(() => {
+        scrollingText(".choice-2-1", " Grab the key", speed );
+    }, speed*400);
+}
 
+understood = true
 }
 
 if(choices[0])
@@ -249,6 +307,7 @@ function testInput(event){
         }
         else {
             document.querySelector('.text').innerHTML = "";
+            back.style.display = "none";
                 input.style.display = "none";
                 badEnding.style.display = "block";
                 scrollingText(".text", "you were wrong three times. The door is permanently locked. That wasn't supposed to happen. I'm sorry, there's nothing I can do for you", speed )
