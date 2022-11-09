@@ -4,10 +4,12 @@ const input = document.querySelector(".input");
 const badEnding = document.querySelector('.bad-ending');
 const choiceB = document.querySelector('.choice-2B-1');
 const back = document.querySelector(".back")
+const isKeyInInventory = document.querySelector('.key');
 
 //default values
 let done = false;
 input.style.display = "none"
+isKeyInInventory.style.display = "none";
 let tries = 2;//formula: tries + 1  dit zijn 3 tries
 let speed = 40;
 let ownKey = false;
@@ -189,6 +191,8 @@ function choiceTwoClick()
     
 
     ownKey = true;
+
+    isKeyInInventory.style.display = "block";
 }
 
 function choiceBClick() {
