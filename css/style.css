@@ -21,6 +21,35 @@ body{
     border: 2px solid white;
 }
 
+.inventory{
+    margin: auto;
+    padding: 5px;
+    text-align: center;
+    background-color: #000000; 
+    color: lime;
+    display:block; 
+    width: 150px;
+    height: 130px;
+    border: 2px solid white;
+    float:right;
+}
+
+td{
+    font-size: 17px;
+    color: white;
+    font-weight: bold;
+}
+
+table{
+    width: 150px;
+    height: 100px;
+}
+
+.inventory .white{
+    color: white;
+    margin-top: 10px;
+}
+
 .summaryText {
     color: white;
 }
