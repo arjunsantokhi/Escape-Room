@@ -78,7 +78,7 @@ function choiceOneClick()
     document.querySelector('.choice-2-1').innerHTML = "";
     document.querySelector('.choice-3-1').innerHTML = "";
     document.querySelector('.choice-2B-1').innerHTML = "";
-    scrollingText(".text", "You walk to the door, only to find a number lock,  Type a code.", speed );
+    scrollingText(".text", "You walk to the door, only to find a keyboard, somehow you recognize the language.", speed );
     setTimeout(() => {
         input.style.display = "block"; 
         scrollingText(".back", "Back.", speed );
@@ -191,14 +191,27 @@ function choiceTwoClick()
 
 function choiceBClick() {
 
+    console.log("goeie knop");
     document.querySelector('.text').innerHTML = "";
     document.querySelector('.summaryText').innerHTML = "";
     document.querySelector('.choice-1-1').innerHTML = "";
     document.querySelector('.choice-2-1').innerHTML = "";
+    document.querySelector('.choice-2B-1').innerHTML = "";
     document.querySelector('.choice-3-1').innerHTML = "";
 
-    scrollingText(".text", "You break the key, its brittle, dust particles fly through the room. You find that glowing text appears spelling: “3 9 5 is the key”. The floor, walls and ceiling are covered with the same sentence: “3 9 5 is the key “. You walk back to the computer. ", speed );
+    document.querySelector('.summaryText').style.display = "none";
+    document.querySelector('.choice-1-1').style.display = "none";
+    document.querySelector('.choice-2-1').style.display = "none";
+    document.querySelector('.choice-2B-1').style.display = "none";
+    document.querySelector('.choice-3-1').style.display = "none";
+
+    scrollingText(".text", "You break the key, its brittle, dust particles fly through the room. You find that glowing text appears spelling: “i'm as swift as a coyote, i sting like a bee and carve like a beaver, what am i?” ", speed );
     
+    
+    setTimeout(() => {
+        scrollingText(".back", "Back.", speed );
+    }, speed*225); 
+
     back.style.display = "block";
     
 
@@ -220,7 +233,7 @@ setTimeout(() => {
     scrollingText(".text", "There should be a key somewhere in this empty room.", speed );
 }, speed*110);
 
-setTimeout(function(){
+setTimeout(() => {
     document.querySelector('.text').innerHTML = "";
 }, speed*175);
 
@@ -275,9 +288,9 @@ if(choices[1])
     choices[1].addEventListener('click', choiceTwoClick)
 }
 
-if(choices[2])
+if(choices[3])
 {
-    choices[2].addEventListener('click', choiceTreeClick)
+    choices[3].addEventListener('click', choiceTreeClick)
 }
 
 if(choiceB) {
@@ -293,7 +306,7 @@ function testInput(event){
     {
         if(tries > 0)
         {
-            if(input.value == "395") {
+            if(input.value == "Hummingbird" || input.value == "ummingbird") {
                 document.querySelector('.text').innerHTML = "";
                 document.querySelector('.back').innerHTML = "";
                 input.style.display = "none";
