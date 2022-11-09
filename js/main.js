@@ -191,8 +191,10 @@ function choiceTwoClick()
     
 
     ownKey = true;
-
-    isKeyInInventory.style.display = "block";
+    setTimeout(() => {
+        isKeyInInventory.style.display = "block";
+    }, speed*26 ); 
+  
 }
 
 function choiceBClick() {
@@ -207,14 +209,14 @@ function choiceBClick() {
     document.querySelector('.choice-2B-1').innerHTML = "";
 
 
-    scrollingText(".text", "You break the key, its brittle, dust particles fly through the room. You find that glowing text appears spelling: “i'm as swift as a coyote, i sting like a bee and carve like a beaver, what am i?” ", speed );
+    scrollingText(".text", "You fling the key against the wall , it's brittle, it breaks in half. dust particles fly through the room. You find that glowing text appears on the wall spelling: “I’m as swift as a coyote, I sting like a bee and I carve like a beaver, what am I?”. You put the other half of the key, with the base, in your pocket  ", speed );
     
     
     setTimeout(() => {
         scrollingText(".back", "Back.", speed );
-    }, speed*110);
+    }, speed*140);
 
-   
+   //speed
     
 
 }
