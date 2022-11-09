@@ -89,6 +89,9 @@ function choiceOneClick()
 }
 
 function backClick() {
+
+    console.log("back clicked");
+
     document.querySelector('.text').innerHTML = "";
     back.style.display = "none";
     input.style.display = "none";
@@ -185,7 +188,6 @@ function choiceTwoClick()
 
     
 
-
     ownKey = true;
 }
 
@@ -196,23 +198,18 @@ function choiceBClick() {
     document.querySelector('.summaryText').innerHTML = "";
     document.querySelector('.choice-1-1').innerHTML = "";
     document.querySelector('.choice-2-1').innerHTML = "";
-    document.querySelector('.choice-2B-1').innerHTML = "";
     document.querySelector('.choice-3-1').innerHTML = "";
+    document.querySelector('.choice-2B-1').innerHTML = "";
 
-    document.querySelector('.summaryText').style.display = "none";
-    document.querySelector('.choice-1-1').style.display = "none";
-    document.querySelector('.choice-2-1').style.display = "none";
-    document.querySelector('.choice-2B-1').style.display = "none";
-    document.querySelector('.choice-3-1').style.display = "none";
 
     scrollingText(".text", "You break the key, its brittle, dust particles fly through the room. You find that glowing text appears spelling: “i'm as swift as a coyote, i sting like a bee and carve like a beaver, what am i?” ", speed );
     
     
     setTimeout(() => {
         scrollingText(".back", "Back.", speed );
-    }, speed*225); 
+    }, speed*110);
 
-    back.style.display = "block";
+   
     
 
 }
