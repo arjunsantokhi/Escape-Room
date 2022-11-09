@@ -183,7 +183,7 @@ function choiceTwoClick()
     else { 
         setTimeout(() => {
             scrollingText(".choice-3-1", ' "What?" ', speed );
-        }, speed*530);
+        }, speed*300);
     }
 
     
@@ -199,6 +199,7 @@ function choiceBClick() {
     document.querySelector('.choice-1-1').innerHTML = "";
     document.querySelector('.choice-2-1').innerHTML = "";
     document.querySelector('.choice-3-1').innerHTML = "";
+    choices[3].innerHTML = "";
     document.querySelector('.choice-2B-1').innerHTML = "";
 
 
@@ -298,12 +299,12 @@ if(back) {
     back.addEventListener('click', backClick);
 }
 
-function testInput(event){
+function keyInput(event){
     if(event.key == "Enter")
     {
         if(tries > 0)
         {
-            if(input.value == "Hummingbird" || input.value == "ummingbird") {
+            if(input.value == "Hummingbird" || input.value == "hummingbird") {
                 document.querySelector('.text').innerHTML = "";
                 document.querySelector('.back').innerHTML = "";
                 input.style.display = "none";
@@ -318,23 +319,20 @@ function testInput(event){
         else {
             document.querySelector('.text').innerHTML = "";
             back.style.display = "none";
-                input.style.display = "none";
-                badEnding.style.display = "block";
-                scrollingText(".text", "you were wrong three times. The door is permanently locked. That wasn't supposed to happen. I'm sorry, there's nothing I can do for you", speed )
-                setTimeout(() => {
-                    document.querySelector('.text').innerHTML = "";
-                    scrollingText(".bad-ending", "you're stuck", speed );
-                }, speed*150);
-
-    
+            input.style.display = "none";
+            badEnding.style.display = "block";
+            scrollingText(".text", "you were wrong three times. The door is permanently locked. That wasn't supposed to happen. I'm sorry, there's nothing I can do for you", speed )
+            setTimeout(() => {
+                document.querySelector('.text').innerHTML = "";
+                scrollingText(".bad-ending", "you're stuck", speed );
+            }, speed*150);
         }
-        
     }
 }
 
 if(input)
 {
-    input.addEventListener('keydown', testInput)
+    input.addEventListener('keydown', keyInput)
 }
 
 
