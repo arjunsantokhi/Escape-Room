@@ -211,10 +211,13 @@ function choiceBClick() {
 
     scrollingText(".text", "You fling the key against the wall , it's brittle, it breaks in half. dust particles fly through the room. You find that glowing text appears on the wall spelling: “I’m as swift as a coyote, I sting like a bee and I carve like a beaver, what am I?”. You put the other half of the key, with the base, in your pocket  ", speed );
     
-    
+    setTimeout(() => {
+        isKeyInInventory.src = "/images/broken-key.png";
+    }, speed*20);
+
     setTimeout(() => {
         scrollingText(".back", "Back.", speed );
-    }, speed*140);
+    }, speed*320);
 
    //speed
     
