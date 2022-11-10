@@ -320,7 +320,22 @@ function nextLvl()
     input.style.display = "none";
     back.style.display = "none";
 
-    
+
+    setTimeout(() => {
+        scrollingText(".text", "You walk into another room, there's a computer on the floor with a single, open, application.", speed);
+    }, speed*100);
+
+    setTimeout(() => {
+        document.querySelector('.text').innerHTML = "";
+    }, speed*200);
+
+    setTimeout(() => {
+        scrollingText(".text", "Well hello, you confusion is predictable, you're not outside, there is still more to this.", speed);
+    }, speed*210);
+
+    setTimeout(() => {
+        scrollingText(".text", "There is a chest in front of you.", speed);
+    }, speed*280);
 
 }
 
@@ -334,7 +349,7 @@ function keyInput(event){
                 document.querySelector('.back').innerHTML = "";
                 input.style.display = "none";
                 scrollingText(".text", "correct, you opened the door and walk out of it", speed );
-                test();
+                nextLvl();
             }
             else{
                 document.querySelector('.text').innerHTML = "";
