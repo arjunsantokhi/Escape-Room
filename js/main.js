@@ -14,6 +14,7 @@ let tries = 2;//formula: tries + 1  dit zijn 3 tries
 let speed = 40;
 let ownKey = false;
 let understood = false;
+let breakKey = false
 
 function scrollingText(className, message, speed){
     let i = 0;
@@ -122,17 +123,29 @@ function backClick() {
         scrollingText(".choice-1-1", " Walk to the door", speed );
     }, speed*170);
     
-    if(ownKey == true ) {
-        setTimeout(() => {
-            scrollingText(".choice-2B-1", " break the key", speed );
-            back.style.display = "block";
-        }, speed*200); 
+
+    if(ownKey == true) {
+        if(breakKey == false)
+        {
+            setTimeout(() => {
+                scrollingText(".choice-2B-1", " break the key", speed );
+                back.style.display = "block";
+            }, speed*200); 
+        }
+        else{
+            setTimeout(() => {
+                document.querySelector('.choice-2B-1').innerHTML = "";
+                back.style.display = "block";
+            }, speed*200); 
+        }
     }
-    else {
+    else{
         setTimeout(() => {
             scrollingText(".choice-2-1", " Grab the key", speed );
-        }, speed*200);
+        }, speed*400);
     }
+   
+
     if (understood == true ) {
         document.querySelector('.choice-3-1').innerHTML = "";
     }
@@ -218,6 +231,8 @@ function choiceBClick() {
     setTimeout(() => {
         scrollingText(".back", "Back.", speed );
     }, speed*320);
+    
+    breakKey = true
 
    //speed
     
@@ -321,21 +336,6 @@ function nextLvl()
     back.style.display = "none";
 
 
-    setTimeout(() => {
-        scrollingText(".text", "You walk into another room, there's a computer on the floor with a single, open, application.", speed);
-    }, speed*100);
-
-    setTimeout(() => {
-        document.querySelector('.text').innerHTML = "";
-    }, speed*200);
-
-    setTimeout(() => {
-        scrollingText(".text", "Well hello, you confusion is predictable, you're not outside, there is still more to this.", speed);
-    }, speed*210);
-
-    setTimeout(() => {
-        scrollingText(".text", "There is a chest in front of you.", speed);
-    }, speed*280);
 
 }
 
@@ -349,7 +349,7 @@ function keyInput(event){
                 document.querySelector('.back').innerHTML = "";
                 input.style.display = "none";
                 scrollingText(".text", "correct, you opened the door and walk out of it", speed );
-                nextLvl();
+                test();
             }
             else{
                 document.querySelector('.text').innerHTML = "";
