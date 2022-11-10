@@ -6,6 +6,7 @@ const choiceB = document.querySelector('.choice-2B-1');
 const back = document.querySelector(".back")
 const backTwoBtn = document.querySelector(".back2")
 const isKeyInInventory = document.querySelector('.key');
+const bookDiv =  document.querySelectorAll('.books');
 
 //default values
 let done = false;
@@ -241,6 +242,10 @@ function choiceBClick() {
 
 }
 
+function book() {
+
+}
+
 function choiceTreeClick()
 {
     console.log("clicked 3");
@@ -303,6 +308,18 @@ understood = true
 }
 
 function choice22Click() {
+
+    console.log("JAAAAAA");
+
+    document.querySelector('.text').innerHTML = "";
+    document.querySelector('.summaryText').innerHTML = "";
+    document.querySelector('.choice-1-2').innerHTML = "";
+    document.querySelector('.choice-2-2').innerHTML = "";
+    bookDiv[0].style.display = "block";
+
+    setTimeout(() => {
+        document.querySelector('.booktext').innerHTML = "A six-year-old was found dead in the basement of the family Ramsey's home in December 1996. Early that morning the victim’s mother had called 911 and stated that her daughter was missing, and that a ransom note was found in the house demanding $118,000 for her return. A few hours later the family and the police discovered that the victim had never left the house. When prompted to conduct a second search of the house, the father found her body in the basement. She’d been bound, gagged and killed with a blow to the head and had been asphyxiated with a cord made from one of the mothers' paintbrushes. Investigators later revealed that the victim had also been sexually assaulted. Suspects soon emerged, including an intruder, a family friend, who had played Santa in their home, the victim’s parents and her nine-year-old brother. This case was unsolved as the investigation was done irresponsibly. Soon after the police first arrived at the Ramsey’s home, before it could be thoroughly combed for physical evidence, friends of the family arrived to show support for them, and the police allowed them to traverse the house freely. If conclusive physical evidence had existed, it would be almost immediately destroyed. ";
+    }, speed*10);
 
 }
 
@@ -371,7 +388,7 @@ function backTwo() {
     }, speed*490);
 
     setTimeout(() => {
-        scrollingText(".choice-2-2", "read the book .", speed);
+        scrollingText(".choice-2-2", "Grab and read the book.", speed);
     }, speed*530);
 
 
@@ -413,7 +430,7 @@ function nextLvl()
     }, speed*490);
 
     setTimeout(() => {
-        scrollingText(".choice-2-2", "read the book .", speed);
+        scrollingText(".choice-2-2", "Grab and read the book.", speed);
     }, speed*530);
 }
 
@@ -431,7 +448,6 @@ function choice12Click()
         scrollingText(".back2", "Back", speed);
     }, speed*65); 
     back.style.display = "none";
-   
 }
 
 function keyInput(event){
@@ -476,7 +492,7 @@ if(input)
 
 
 
- 
+
 
 
 

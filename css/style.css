@@ -39,6 +39,24 @@ body{
     float:right;
 }
 
+.books{
+    margin: auto;
+    padding: 5px;
+    padding-top: 50px;
+    text-align: center;
+    background-color: #000000; 
+    color: white;
+    display:block; 
+    width: 350px;
+    height: 530px;
+    border: 2px solid white;
+    display: none;
+}
+
+.booktext{
+    margin-top: 15px;
+}
+
 td{
     font-size: 17px;
     color: white;
