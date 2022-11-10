@@ -102,6 +102,17 @@ table{
     cursor: pointer;
 }
 
+.back2{
+    color: orange;
+    display: none;
+}
+
+.back2:hover {
+
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 .key{
     -webkit-user-drag: none;
     user-select: none;

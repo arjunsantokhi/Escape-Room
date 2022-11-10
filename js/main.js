@@ -4,6 +4,7 @@ const input = document.querySelector(".input");
 const badEnding = document.querySelector('.bad-ending');
 const choiceB = document.querySelector('.choice-2B-1');
 const back = document.querySelector(".back")
+const backTwoBtn = document.querySelector(".back2")
 const isKeyInInventory = document.querySelector('.key');
 
 //default values
@@ -158,6 +159,7 @@ function backClick() {
 
 }
 
+
 function choiceTwoClick()
 {
     document.querySelector('.text').innerHTML = "";
@@ -300,6 +302,11 @@ else {
 understood = true
 }
 
+function choice22Click() {
+
+}
+
+
 if(choices[0])
 {
     choices[0].addEventListener('click', choiceOneClick)
@@ -319,8 +326,60 @@ if(choiceB) {
     choiceB.addEventListener('click', choiceBClick);
 }
 
+if(choices[4])
+{
+    choices[4].addEventListener('click', choice12Click );
+}
+
+if(choices[5])
+{
+    choices[5].addEventListener('click', choice22Click)
+}
+
+
+
+
 if(back) {
     back.addEventListener('click', backClick);
+}
+
+function backTwo() {
+    document.querySelector('.text').innerHTML = "";
+    document.querySelector('.summaryText').innerHTML = "";
+    document.querySelector('.choice-1-1').innerHTML = "";
+    document.querySelector('.choice-2-1').innerHTML = "";
+    document.querySelector('.choice-3-1').innerHTML = "";
+
+    input.style.display = "none";
+    back.style.display = "none";
+
+    setTimeout(() => {
+        scrollingText(".text", "Well hello, you confusion is predictable, you're not outside, there is still more to this.", speed);
+    }, speed*170);
+
+
+    setTimeout(() => {
+        document.querySelector('.text').innerHTML = "";
+    }, speed*310);
+
+    setTimeout(() => {
+        scrollingText(".summaryText", 'you walk into another room, there is, again, a computer there, this time with a book next to it, the title reads: "a crime not committed is your key to progress" ', speed);
+    }, speed*320);    
+
+    setTimeout(() => {
+        scrollingText(".choice-1-2", "walk to the door.", speed);
+    }, speed*490);
+
+    setTimeout(() => {
+        scrollingText(".choice-2-2", "read the book .", speed);
+    }, speed*530);
+
+
+
+}
+
+if(backTwoBtn) {
+    backTwoBtn.addEventListener('click', backTwo);
 }
 
 function nextLvl()
@@ -331,12 +390,48 @@ function nextLvl()
     document.querySelector('.choice-1-1').innerHTML = "";
     document.querySelector('.choice-2-1').innerHTML = "";
     document.querySelector('.choice-3-1').innerHTML = "";
+    backTwoBtn.innerHTML = "";
 
     input.style.display = "none";
     back.style.display = "none";
 
+    setTimeout(() => {
+        scrollingText(".text", "Well hello, you confusion is predictable, you're not outside, there is still more to this.", speed);
+    }, speed*170);
 
 
+    setTimeout(() => {
+        document.querySelector('.text').innerHTML = "";
+    }, speed*310);
+
+    setTimeout(() => {
+        scrollingText(".summaryText", 'you walk into another room, there is, again, a computer there, this time with a book next to it, the title reads: "a crime not committed is your key to progress" ', speed);
+    }, speed*320);    
+
+    setTimeout(() => {
+        scrollingText(".choice-1-2", "walk to the door.", speed);
+    }, speed*490);
+
+    setTimeout(() => {
+        scrollingText(".choice-2-2", "read the book .", speed);
+    }, speed*530);
+}
+
+function choice12Click()
+{
+    backTwoBtn.style.display = "block";
+    document.querySelector('.text').innerHTML = "";
+    document.querySelector('.summaryText').innerHTML = "";
+    document.querySelector('.choice-1-2').innerHTML = "";
+    document.querySelector('.choice-2-2').innerHTML = "";
+    document.querySelector('.back2').innerHTML = "";
+    scrollingText(".text", "You walk to the door, there is a keyboard in a different language again, you seem to recognize it.", speed );
+    setTimeout(() => {
+        input.style.display = "block"; 
+        scrollingText(".back2", "Back", speed);
+    }, speed*65); 
+    back.style.display = "none";
+   
 }
 
 function keyInput(event){
@@ -348,8 +443,11 @@ function keyInput(event){
                 document.querySelector('.text').innerHTML = "";
                 document.querySelector('.back').innerHTML = "";
                 input.style.display = "none";
-                scrollingText(".text", "correct, you opened the door and walk out of it", speed );
-                test();
+                scrollingText(".text", "correct, you opened the door and walk out of it.", speed );
+                document.querySelector('.text').innerHTML = "";
+                nextLvl();
+                input.value = "";
+                input.style.display = "none";
             }
             else{
                 document.querySelector('.text').innerHTML = "";
