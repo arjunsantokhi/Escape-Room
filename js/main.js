@@ -308,6 +308,11 @@ if(back) {
     back.addEventListener('click', backClick);
 }
 
+function nextLvl()
+{
+    console.log("test");
+}
+
 function keyInput(event){
     if(event.key == "Enter")
     {
@@ -318,6 +323,7 @@ function keyInput(event){
                 document.querySelector('.back').innerHTML = "";
                 input.style.display = "none";
                 scrollingText(".text", "correct, you opened the door and walk out of it", speed );
+                test();
             }
             else{
                 document.querySelector('.text').innerHTML = "";
