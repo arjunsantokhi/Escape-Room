@@ -311,6 +311,17 @@ if(back) {
 function nextLvl()
 {
     console.log("test");
+    document.querySelector('.text').innerHTML = "";
+    document.querySelector('.summaryText').innerHTML = "";
+    document.querySelector('.choice-1-1').innerHTML = "";
+    document.querySelector('.choice-2-1').innerHTML = "";
+    document.querySelector('.choice-3-1').innerHTML = "";
+
+    input.style.display = "none";
+    back.style.display = "none";
+
+    
+
 }
 
 function keyInput(event){
