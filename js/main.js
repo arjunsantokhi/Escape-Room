@@ -328,7 +328,7 @@ function choice22Click() {
     }, speed*10);
 
     backTwoBtn.style.display = "block";
-    scrollingText(".back2", "Back", speed);
+    backTwoBtn.innerHTML = "Back";
 }
 
 
