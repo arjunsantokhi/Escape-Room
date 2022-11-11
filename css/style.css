@@ -47,14 +47,28 @@ body{
     background-color: #000000; 
     color: white;
     display:block; 
-    width: 350px;
+    width: 60vw;
     height: 530px;
-    border: 2px solid white;
     display: none;
 }
 
-.booktext{
-    margin-top: 15px;
+.book-cover{
+    border: 2px solid white;
+    float: left;
+    width: 300px;
+    height: 400px;
+}
+
+.booktext-one{
+    margin-top: 30px;
+    margin-right: 25px;
+    margin-left: 25px;
+}
+
+.booktext-two{
+    margin-top: 70px;
+    margin-right: 25px;
+    margin-left: 25px;
 }
 
 td{
@@ -131,11 +145,29 @@ table{
     cursor: pointer;
 }
 
+.back3{
+    color: orange;
+    display: none;
+}
+
+.back3:hover {
+
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 .key{
     -webkit-user-drag: none;
     user-select: none;
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
+}
+
+.book-item{
+    -webkit-user-drag: none;
     user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
