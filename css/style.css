@@ -171,3 +171,10 @@ table{
     -webkit-user-select: none;
     -ms-user-select: none;
 }
+
+.good-ending {
+    font-size: 100px;
+    color: lime;
+    text-align: center;
+    display: none;   
+}
