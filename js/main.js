@@ -503,7 +503,7 @@ function keyInput2(event){
     {
         if(tries > 0)
         {
-            if(input2.value == "hostage" || input2.value == "hostage") {
+            if(input2.value == "Hostage" || input2.value == "hostage") {
                 document.querySelector('.text').innerHTML = "";
                 document.querySelector('.back').innerHTML = "";
                 input2.style.display = "none";
