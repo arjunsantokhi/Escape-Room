@@ -503,7 +503,7 @@ function keyInput2(event){
     {
         if(tries > 0)
         {
-            if(input2.value == "Hostage" || input2.value == "hostage") {
+            if(input2.value == "hostage" || input2.value == "hostage") {
                 document.querySelector('.text').innerHTML = "";
                 document.querySelector('.back').innerHTML = "";
                 input2.style.display = "none";
@@ -530,7 +530,7 @@ function keyInput2(event){
             backTwoBtn.style.display = "none";
             input2.style.display = "none";
             badEnding.style.display = "block";
-            scrollingText(".text", "you were wrong three times. The door is permanently locked. That wasn't supposed to happen. I'm sorry, there's nothing I can do for you", speed )
+            scrollingText(".text", "you were wrong three times. The door is permanently locked. you've come so far, I'm sorry, there's nothing I can do for you", speed )
             setTimeout(() => {
                 document.querySelector('.text').innerHTML = "";
                 scrollingText(".bad-ending", "you're stuck", speed );
