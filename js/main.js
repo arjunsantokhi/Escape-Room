@@ -6,6 +6,7 @@ const choiceB = document.querySelector('.choice-2B-1');
 const back = document.querySelector(".back")
 const backTwoBtn = document.querySelector(".back2")
 const isKeyInInventory = document.querySelector('.key');
+const isBookInInventory = document.querySelector('.book-item');
 const bookDiv =  document.querySelectorAll('.books');
 const input2 = document.querySelector(".input-2");
 const goodEnding = document.querySelector('.good-ending');
@@ -13,7 +14,9 @@ const goodEnding = document.querySelector('.good-ending');
 //default values
 let done = false;
 input.style.display = "none"
+input2.style.display = "none"
 isKeyInInventory.style.display = "none";
+isBookInInventory.style.display = "none";
 let tries = 2;//formula: tries + 1  dit zijn 3 tries
 let speed = 40;
 let ownKey = false;
@@ -318,11 +321,14 @@ function choice22Click() {
     document.querySelector('.choice-1-2').innerHTML = "";
     document.querySelector('.choice-2-2').innerHTML = "";
     bookDiv[0].style.display = "block";
-
+    isBookInInventory.style.display = "block";
     setTimeout(() => {
-        document.querySelector('.booktext').innerHTML = "A six-year-old was found dead in the basement of the family Ramsey's home in December 1996. Early that morning the victim’s mother had called 911 and stated that her daughter was missing, and that a ransom note was found in the house demanding $118,000 for her return. A few hours later the family and the police discovered that the victim had never left the house. When prompted to conduct a second search of the house, the father found her body in the basement. She’d been bound, gagged and killed with a blow to the head and had been asphyxiated with a cord made from one of the mothers' paintbrushes. Investigators later revealed that the victim had also been sexually assaulted. Suspects soon emerged, including an intruder, a family friend, who had played Santa in their home, the victim’s parents and her nine-year-old brother. This case was unsolved as the investigation was done irresponsibly. Soon after the police first arrived at the Ramsey’s home, before it could be thoroughly combed for physical evidence, friends of the family arrived to show support for them, and the police allowed them to traverse the house freely. If conclusive physical evidence had existed, it would be almost immediately destroyed. ";
+        document.querySelector('.booktext-one').innerHTML = "A six-year-old was found dead in the basement of the family Ramsey's home in December 1996. Early that morning the victim’s mother had called 911 and stated that her daughter was missing, and that a ransom note was found in the house demanding $118,000 for her return. A few hours later the family and the police discovered that the victim had never left the house. When prompted to conduct a second search of the house, the father found her body in the basement. She’d been bound, gagged and killed with a blow to the head and had been asphyxiated with a cord made from one of the mothers' paintbrushes.";
+        document.querySelector('.booktext-two').innerHTML = "Investigators later revealed that the victim had also been sexually assaulted. Suspects soon emerged, including an intruder, a family friend, who had played Santa in their home, the victim’s parents and her nine-year-old brother. This case was unsolved as the investigation was done irresponsibly. Soon after the police first arrived at the Ramsey’s home, before it could be thoroughly combed for physical evidence, friends of the family arrived to show support for them, and the police allowed them to traverse the house freely. If conclusive physical evidence had existed, it would be almost immediately destroyed. ";
     }, speed*10);
 
+    backTwoBtn.style.display = "block";
+    scrollingText(".back2", "Back", speed);
 }
 
 
@@ -370,11 +376,12 @@ function backTwo() {
     document.querySelector('.choice-3-1').innerHTML = "";
 
     input.style.display = "none";
+    input2.style.display = "none";
     back.style.display = "none";
 
     setTimeout(() => {
         scrollingText(".text", "Well hello, you confusion is predictable, you're not outside, there is still more to this.", speed);
-    }, speed*170);
+    }, speed*140);
 
 
     setTimeout(() => {
@@ -394,7 +401,10 @@ function backTwo() {
     }, speed*530);
 
 
+    bookDiv[0].style.display = "none";
+    backTwoBtn.style.display = "none";
 
+    isBookInInventory.style.display = "none";
 }
 
 if(backTwoBtn) {
@@ -447,7 +457,7 @@ function choice12Click()
     document.querySelector('.back2').innerHTML = "";
     scrollingText(".text", "You walk to the door, there is a keyboard in a different language again, you seem to recognize it.", speed );
     setTimeout(() => {
-        input.style.display = "block"; 
+        input2.style.display = "block"; 
         scrollingText(".back2", "Back", speed);
     }, speed*65); 
     back.style.display = "none";
@@ -497,6 +507,7 @@ function keyInput2(event){
                 document.querySelector('.text').innerHTML = "";
                 document.querySelector('.back').innerHTML = "";
                 input2.style.display = "none";
+                backTwoBtn.style.display = "none";
                 scrollingText(".text", '"congratulations, you did what i couldnt, your freedom was earned, goodbye" .', speed );
                 input2.value = "";
                 input2.style.display = "none";
@@ -516,6 +527,7 @@ function keyInput2(event){
         else {
             document.querySelector('.text').innerHTML = "";
             back.style.display = "none";
+            backTwoBtn.style.display = "none";
             input2.style.display = "none";
             badEnding.style.display = "block";
             scrollingText(".text", "you were wrong three times. The door is permanently locked. That wasn't supposed to happen. I'm sorry, there's nothing I can do for you", speed )

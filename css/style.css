@@ -116,6 +116,18 @@ table{
     display: block;
 }
 
+.input-2{
+    background-color: #171717;
+    color: white;
+    font-family: 'VT323';
+    font-size: 15px;
+    border: 0;
+    outline: 0;
+    font-weight: bold;
+    width: 60vw;
+    display: block;
+}
+
 .bad-ending {
     font-size: 100px;
     color: red;
